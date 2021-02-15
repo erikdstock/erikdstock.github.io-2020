@@ -8,9 +8,7 @@ import { Props as DocHeadProps } from "./DocHead"
  * The top-level Page Wrapper including layout, document head and optional google analytics.
  * If you aren't using google analytics or some other page-level tracking, use `<Layout />` instead.
  */
-export const LayoutWithAnalytics: React.FC<DocHeadProps> = (
-  props: DocHeadProps
-) => {
+export const Layout: React.FC<DocHeadProps> = (props: DocHeadProps) => {
   // // TODO: should this use using a hook?
   // if (typeof config.analytics === "string" && config.analytics !== "") {
   //   ReactGA.initialize(config.analytics)

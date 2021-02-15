@@ -1,6 +1,29 @@
 import { useEffect, useState } from "react"
 import { Box, useColorMode, Button } from "theme-ui"
 
+const colorModes = {
+  default: "Light",
+  dark: "Dark",
+  retro: "Retro",
+}
+
+const nextMode = (currentColorMode: string): string => {
+  const modes = Object.keys(colorModes)
+
+  // take the first mode after the current one.
+  const nextMode = modes.reduce<string | boolean>((prev, current) => {
+    if (typeof prev === "string") return prev
+    if (prev) return current
+    if (current === currentColorMode) return true
+    return false
+  }, false)
+  if (typeof nextMode !== "string") {
+    console.warn("you did a bug >:/")
+    return "default"
+  }
+  return nextMode
+}
+
 const ThemeToggle: React.FC = () => {
   const [colorMode, setColorMode] = useColorMode()
   const [opacity, setOpacity] = useState(0)
@@ -24,10 +47,10 @@ const ThemeToggle: React.FC = () => {
       <Button
         sx={{ bg: "gray", py: 1, px: 2, fontSize: 3, minWidth: 75 }}
         onClick={(_e) => {
-          setColorMode(colorMode === "default" ? "dark" : "default")
+          setColorMode(nextMode(colorMode))
         }}
       >
-        {colorMode === "default" ? "Light" : "Dark"}
+        {colorModes[colorMode]}
       </Button>
     </Box>
   )
