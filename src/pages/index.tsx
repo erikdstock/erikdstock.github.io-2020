@@ -1,5 +1,5 @@
 import config from "../../blog.config"
-import { LayoutWithAnalytics } from "../components/layout/LayoutWithAnalytics"
+import { Layout } from "../components/layout/Layout"
 import Posts from "../components/views/Posts"
 import { getAllPosts } from "../api"
 import { GetStaticProps, NextPage } from "next"
@@ -15,7 +15,7 @@ const PostsPage: NextPage<Props> = ({
   prevPage: prevPage,
   nextPage: nextPage,
 }) => (
-  <LayoutWithAnalytics
+  <Layout
     url={config.url}
     title={config.title}
     description={config.description}
@@ -23,7 +23,7 @@ const PostsPage: NextPage<Props> = ({
     imageAlt={config.shareImageAlt}
   >
     <Posts posts={posts} prevPage={prevPage} nextPage={nextPage} />
-  </LayoutWithAnalytics>
+  </Layout>
 )
 
 export const getStaticProps: GetStaticProps<Props> = async function () {

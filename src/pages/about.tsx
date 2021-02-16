@@ -1,9 +1,9 @@
-import { LayoutWithAnalytics } from "../components/layout/LayoutWithAnalytics"
+import { Layout } from "../components/layout/Layout"
 import About from "../components/views/About"
 import config from "../../blog.config.js"
 
 const AboutPage: React.FC = () => (
-  <LayoutWithAnalytics
+  <Layout
     url={config.url + "about"}
     title={config.title + " | About"}
     description={"Learn more about " + config.title}
@@ -11,7 +11,7 @@ const AboutPage: React.FC = () => (
     imageAlt={config.shareImageAlt}
   >
     <About />
-  </LayoutWithAnalytics>
+  </Layout>
 )
 
 export default AboutPage

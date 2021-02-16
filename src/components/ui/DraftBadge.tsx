@@ -4,7 +4,7 @@ const DraftBadge: React.FC = () => (
   <Text
     as="span"
     sx={{
-      bg: "red",
+      bg: "accent",
       color: "white",
       fontWeight: 400,
       fontSize: 0,
@@ -16,7 +16,7 @@ const DraftBadge: React.FC = () => (
       borderRadius: "2px",
     }}
   >
-    draft
+    Draft
   </Text>
 )
 
