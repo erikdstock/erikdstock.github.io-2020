@@ -176,15 +176,12 @@ export const theme: ThemeType = {
     table: {
       width: "100%",
       borderCollapse: "separate",
-      // borderRadius: 2,
-      // borderWidth: 2,
-      // borderStyle: "solid",
+
       borderSpacing: 0,
       boxShadow: "md",
       thead: {
         textAlign: "left",
         backgroundColor: "muted",
-        // borderBottom: "solid",
         boxShadow: "sm",
       },
       th: { py: 2 },
