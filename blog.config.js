@@ -1,8 +1,8 @@
 module.exports = {
   url: "https://erik-online.vercel.app/",
   title: "Erik Online",
-  subtitle: "Erik's politics, culture and technology weblog",
-  description: "A 21st-century web-log on politics, culture, technology", // meta name="description"
+  subtitle: "",
+  description: "A 21st-century weblog on politics, culture, technology", // meta name="description"
   author: "Erik Stockmeier",
 
   postsPerPage: 4,

@@ -46,7 +46,7 @@ export const theme: ThemeType = {
     accent: "#F2055C",
     white: "#fff",
     black: "#000",
-    muted: "#eee",
+    muted: "#f6f6f6",
     modes: {
       dark: {
         text: "#fff",
@@ -151,7 +151,7 @@ export const theme: ThemeType = {
       fontWeight: "body",
       lineHeight: "body",
       code: {
-        background: "black",
+        background: "muted",
         color: "accent",
         borderRadius: 1,
         px: 1,
@@ -176,15 +176,30 @@ export const theme: ThemeType = {
     table: {
       width: "100%",
       borderCollapse: "separate",
+      // borderRadius: 2,
+      // borderWidth: 2,
+      // borderStyle: "solid",
       borderSpacing: 0,
-    },
-    th: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
-    },
-    td: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
+      boxShadow: "md",
+      thead: {
+        textAlign: "left",
+        backgroundColor: "muted",
+        // borderBottom: "solid",
+        boxShadow: "sm",
+      },
+      th: { py: 2 },
+      code: {
+        fontSize: 2,
+      },
+      td: {
+        p: 2,
+        textAlign: "left",
+      },
+      tr: {
+        ":nth-child(even)": {
+          backgroundColor: "muted",
+        },
+      },
     },
     img: {
       maxWidth: "100%",
