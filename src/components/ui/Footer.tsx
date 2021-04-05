@@ -1,6 +1,5 @@
 import { Box, Text } from "theme-ui"
 import { Link } from "components/ui/Link"
-import { Media, MediaContextProvider } from "styles/responsive"
 
 const Footer: React.FC = () => (
   <Box
@@ -18,29 +17,8 @@ const Footer: React.FC = () => (
       </Link>
     </Text>
     <Text sx={{ mx: 3, display: "inline-block" }}>
-      Open sourced on{" "}
-      <a href="https://github.com/erikdstock/nextjs-mdx-themeui-ts-starter">
-        Github
-      </a>
-      , forked from{" "}
-      <a href="https://github.com/johnpolacek/nextjs-mdx-blog-starter">
-        johnpolacek/nextjs-mdx-blog-starter
-      </a>
-    </Text>
-    <Text
-      sx={{
-        fontFamily: "monospace",
-        bg: "muted",
-        display: "inline-block",
-        px: 1,
-        borderRadius: 1,
-      }}
-    >
-      {/* @artsy/fresnel responsive media */}
-      <MediaContextProvider>
-        <Media at="xs">{"<= s"}</Media>
-        <Media greaterThan="sm">{"> sm"}</Media>
-      </MediaContextProvider>
+      Source available on{" "}
+      <a href="https://github.com/erikdstock/erik-online">Github</a>
     </Text>
   </Box>
 )

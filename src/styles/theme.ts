@@ -37,6 +37,7 @@ export const theme: ThemeType = {
     heading: 1.25,
   },
   colors: {
+    initialColorModeName: "light",
     // My colors: primary, secondary, background, text,
     text: "#1b1e21",
     background: "#fff",
@@ -45,7 +46,7 @@ export const theme: ThemeType = {
     accent: "#F2055C",
     white: "#fff",
     black: "#000",
-    muted: "#eee",
+    muted: "#f6f6f6",
     modes: {
       dark: {
         text: "#fff",
@@ -77,17 +78,23 @@ export const theme: ThemeType = {
       fontSize: 3,
       px: 3,
       py: 2,
-      bg: "green",
+      bg: "primary",
       color: "white",
       boxShadow: "none",
       borderRadius: "4px",
       border: "none",
       cursor: "pointer",
-      outline: {
-        bg: "white",
-        color: "green",
-        border: "2px solid green",
-      },
+    },
+    outline: {
+      fontSize: 3,
+      px: 3,
+      py: 2,
+      boxShadow: "none",
+      borderRadius: "4px",
+      cursor: "pointer",
+      bg: "secondary",
+      color: "white",
+      border: "2px solid green",
     },
   },
   styles: {
@@ -143,6 +150,14 @@ export const theme: ThemeType = {
       fontFamily: "body",
       fontWeight: "body",
       lineHeight: "body",
+      code: {
+        background: "muted",
+        color: "accent",
+        borderRadius: 1,
+        px: 1,
+        fontFamily: "monospace",
+        fontSize: "inherit",
+      },
     },
     a: {
       color: "primary",
@@ -161,15 +176,27 @@ export const theme: ThemeType = {
     table: {
       width: "100%",
       borderCollapse: "separate",
+
       borderSpacing: 0,
-    },
-    th: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
-    },
-    td: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
+      boxShadow: "md",
+      thead: {
+        textAlign: "left",
+        backgroundColor: "muted",
+        boxShadow: "sm",
+      },
+      th: { py: 2 },
+      code: {
+        fontSize: 2,
+      },
+      td: {
+        p: 2,
+        textAlign: "left",
+      },
+      tr: {
+        ":nth-child(even)": {
+          backgroundColor: "muted",
+        },
+      },
     },
     img: {
       maxWidth: "100%",

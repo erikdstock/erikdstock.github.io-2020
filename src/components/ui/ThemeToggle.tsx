@@ -2,27 +2,31 @@ import { useEffect, useState } from "react"
 import { Box, useColorMode, Button } from "theme-ui"
 
 const colorModes = {
-  default: "Light",
+  light: "Light",
   dark: "Dark",
   retro: "Retro",
 }
 
-const nextMode = (currentColorMode: string): string => {
+const nextMode = (currentMode: string): string => {
   const modes = Object.keys(colorModes)
 
-  // take the first mode after the current one.
+  // Iterate through the keys defined in `colorModes`
   const nextMode = modes.reduce<string | boolean>((prev, current) => {
     if (typeof prev === "string") return prev
     if (prev) return current
-    if (current === currentColorMode) return true
+    if (current === currentMode) return true
     return false
   }, false)
   if (typeof nextMode !== "string") {
-    console.warn("you did a bug >:/")
-    return "default"
+    console.warn("you did a bug >:|")
+    // console.warn(currentMode + " not found in " + JSON.stringify(colorModes))
+    return "light"
   }
   return nextMode
 }
+
+const currentName = (colorMode: string) =>
+  colorModes[colorMode] || Object.entries(colorModes)[0][1]
 
 const ThemeToggle: React.FC = () => {
   const [colorMode, setColorMode] = useColorMode()
@@ -45,12 +49,13 @@ const ThemeToggle: React.FC = () => {
       }}
     >
       <Button
-        sx={{ bg: "gray", py: 1, px: 2, fontSize: 3, minWidth: 75 }}
+        variant="outline"
+        sx={{ px: 2, fontSize: 3, minWidth: 75 }}
         onClick={(_e) => {
           setColorMode(nextMode(colorMode))
         }}
       >
-        {colorModes[colorMode]}
+        {currentName(colorMode)}
       </Button>
     </Box>
   )

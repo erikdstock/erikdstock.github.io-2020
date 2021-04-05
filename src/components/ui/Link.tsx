@@ -11,7 +11,12 @@ interface Props {
  */
 export const Link: React.FC<Props> = ({ href, external = false, children }) => {
   return external ? (
-    <a target="_blank" sx={{ variant: "styles.a" }}>
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      sx={{ variant: "styles.a" }}
+    >
       {children}
     </a>
   ) : (

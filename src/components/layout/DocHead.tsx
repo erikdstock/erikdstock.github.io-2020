@@ -14,7 +14,7 @@ export const DocHead: React.FC<Props> = (props) => (
   <>
     <Head>
       <title>{props.title}</title>
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="icon" type="image/x-icon" href="/favicon.png" />
       <link rel="canonical" href={props.url} />
       <meta name="description" content={props.description} />
       <meta property="og:title" content={props.title} />
