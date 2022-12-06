@@ -21,3 +21,5 @@ yarn-error.log*
 
 .now
 .vercel
+
+# Trigger a deploy to free up my domain name please
